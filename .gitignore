@@ -1,0 +1,25 @@
+# Manuscript files (large, binary)
+*.docx
+*.doc
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+
+# Data files (too large for git)
+*.h5ad
+*.h5
+*.loom
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Output (generated)
+output/figures/*.png
