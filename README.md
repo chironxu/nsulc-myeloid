@@ -2,32 +2,6 @@
 
 Patient-level pseudobulk sensitivity analysis for "Macrophage Remodeling Is Associated with Immunotherapy Response and Enables Interpretable Machine-Learning Prediction in NSCLC."
 
-## Structure
-
-```
-├── analysis/                          # Core analysis scripts
-│   ├── pseudobulk_analysis.py         # Pseudobulk DE + pathway + signature scores
-│   ├── run_scmetabolism_macrophage.py # KEGG metabolic pathway scoring
-│   ├── run_pyscenic_macrophage.py     # TF regulon analysis (pySCENIC)
-│   ├── AI_response_prediction_model.py # XGBoost/RF ML prediction
-│   ├── celldb.py                      # CellPhoneDB ligand-receptor analysis
-│   ├── run_tcga_survival_real.py      # TCGA survival analysis
-│   ├── validate_icb_cohorts.py        # ICB cohort validation (GSE135222, GSE126044)
-│   ├── generate_patient_table.py      # Patient characteristics table
-│   └── generate_cell_count_table.py   # Cell count summary table
-├── manuscript/                        # Manuscript revision scripts
-│   ├── final_revision.py              # Initial revision (17 changes, color-coded)
-│   └── update_pseudobulk_numbers.py   # Apply real pseudobulk numbers to manuscript
-└── output/                            # Analysis outputs
-    ├── data/
-    │   ├── pseudobulk_DE_results.csv           # 20 genes, 6 FDR<0.05
-    │   ├── pseudobulk_pathway_results.csv      # Iron/Redox, Lipid/PPAR (not sig)
-    │   └── pseudobulk_signature_scores.csv     # 154 patients, nPR/pCR/ratio scores
-    └── figures/
-        ├── FigSXa_pseudobulk_DE_volcano.pdf
-        ├── FigSXb_pseudobulk_signature_boxplots.pdf
-        └── FigSXc_pseudobulk_pathway_boxplots.pdf
-```
 
 ## Key Results (n = 154 patients, nPR = 62, pCR = 92)
 
@@ -50,17 +24,7 @@ Patient-level pseudobulk sensitivity analysis for "Macrophage Remodeling Is Asso
 - Iron/Redox: d = -0.03, P = 0.76
 - Lipid/PPAR: d = -0.11, P = 0.73
 
-## Usage
 
-```bash
-# Pseudobulk analysis
-python analysis/pseudobulk_analysis.py \
-  --h5ad processed_data/GSE243013_processed_FULL.h5ad \
-  --myeloid-key "Myeloid cell"
-
-# Update manuscript with real pseudobulk numbers
-python manuscript/update_pseudobulk_numbers.py
-```
 
 ## Data Availability
 
